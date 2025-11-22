@@ -1,0 +1,177 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  padding-top: env(safe-area-inset-top);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #0f172a;
+  color: #0b1221;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+/* Utility classes */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-small {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Flame animations */
+@keyframes flame-subtle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1);
+  }
+  25% {
+    transform: scale(1.02) rotate(-1deg);
+    filter: brightness(1.05);
+  }
+  50% {
+    transform: scale(1.04) rotate(1deg);
+    filter: brightness(1.1);
+  }
+  75% {
+    transform: scale(1.02) rotate(-0.5deg);
+    filter: brightness(1.05);
+  }
+}
+
+@keyframes flame-medium {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1) drop-shadow(0 0 2px currentColor);
+  }
+  20% {
+    transform: scale(1.05) rotate(-2deg);
+    filter: brightness(1.1) drop-shadow(0 0 4px currentColor);
+  }
+  40% {
+    transform: scale(1.08) rotate(2deg);
+    filter: brightness(1.15) drop-shadow(0 0 6px currentColor);
+  }
+  60% {
+    transform: scale(1.05) rotate(-1deg);
+    filter: brightness(1.1) drop-shadow(0 0 4px currentColor);
+  }
+  80% {
+    transform: scale(1.03) rotate(1deg);
+    filter: brightness(1.05) drop-shadow(0 0 3px currentColor);
+  }
+}
+
+@keyframes flame-intense {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1) drop-shadow(0 0 4px currentColor);
+  }
+  15% {
+    transform: scale(1.08) rotate(-3deg);
+    filter: brightness(1.15) drop-shadow(0 0 8px currentColor);
+  }
+  30% {
+    transform: scale(1.12) rotate(3deg);
+    filter: brightness(1.2) drop-shadow(0 0 12px currentColor);
+  }
+  45% {
+    transform: scale(1.06) rotate(-2deg);
+    filter: brightness(1.1) drop-shadow(0 0 6px currentColor);
+  }
+  60% {
+    transform: scale(1.1) rotate(2deg);
+    filter: brightness(1.18) drop-shadow(0 0 10px currentColor);
+  }
+  75% {
+    transform: scale(1.04) rotate(-1deg);
+    filter: brightness(1.08) drop-shadow(0 0 5px currentColor);
+  }
+}
+
+.animate-flame-subtle {
+  animation: flame-subtle 2s ease-in-out infinite;
+}
+
+.animate-flame-medium {
+  animation: flame-medium 1.5s ease-in-out infinite;
+}
+
+.animate-flame-intense {
+  animation: flame-intense 1s ease-in-out infinite;
+}
+
+/* Touch optimizations */
+button,
+input,
+select,
+textarea,
+option {
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* PWA standalone mode adjustments */
+@media (display-mode: standalone) {
+  body {
+    background-color: #0f172a;
+    padding-top: env(safe-area-inset-top);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "Tivlo",
+  "description": "Egy mobilbarát eszköz, amely segít elkerülni a doomspendinget azáltal, hogy a termékek árát a te valós munkaóráidra váltja át.",
+  "requestFramePermissions": []
+}
